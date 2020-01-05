@@ -1,10 +1,10 @@
 #!/bin/bash
 
 append() {
-  ADD_EXPRESSION=$1
-  TARGET=$2  
+  _ADD_EXPRESSION=$1
+  _TARGET=$2  
   echo " "
-  echo "Appending expression $ADD_EXPRESSION to $TARGET"
+  echo "Appending expression $_ADD_EXPRESSION to $_TARGET"
 
-  grep -qxF "$ADD_EXPRESSION" "$TARGET" || echo "$ADD_EXPRESSION" >> "$TARGET"
+  grep -qxF "$_ADD_EXPRESSION" "$_TARGET" || echo "$_ADD_EXPRESSION" >> "$_TARGET"
 }
