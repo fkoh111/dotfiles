@@ -1,2 +1,3 @@
-# env
-Curated environment.... dotfiles, .sh, utilities, etc.
+# dotfiles
+
+As the name implies, a curated selection of .dotfiles 
