@@ -15,23 +15,23 @@ source utils/utils.sh
 shopt -s dotglob
 
 
-## Test for .bash_profile in $HOME
+## Verifying .bash_profile in $HOME
 if [ -f $HOME/.bash_profile ]
   then
     echo "Seems like we have a .bash_profile"
-    TARGET=$HOME/.bash_profile
+    echo "$HOME/.bash_profile"
   else
-    echo "WHUT?! Why don't you have a bash_profile"
+    echo "WHUT?! Why don't you have a .bash_profile"
+    exit
 fi
 
 
 echo " "
 echo "Appending to .dotfile"
-echo " "
 for file in dots/.*[A-Za-z]; do
-  BASE=$(basename $file)
-  SOURCE_BASE="source ~/$BASE"
-  append "$SOURCE_BASE" ".dotfile"
+  _base=$(basename $file)
+  _source_base="source ~/$_base"
+  append "$_source_base" ".dotfile"
 done
 
 
@@ -55,6 +55,11 @@ append "source ~/.dotfile" "$HOME/.bash_profile"
 ## Disable nullglob
 shopt -u nullglob
 
+
+echo " "
+echo "Sourcing bash_profile"
+echo " "
+source $HOME/.bash_profile
 
 echo " "
 echo "-------------------------------------------"
