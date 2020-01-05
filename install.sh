@@ -27,8 +27,8 @@ fi
 
 
 echo " "
-echo "Appending to .dotfile"
-for file in dots/.*[A-Za-z]; do
+echo "Appending from dots/source to .dotfile"
+for file in dots/source/.*[A-Za-z]; do
   _base=$(basename $file)
   _source_base="source ~/$_base"
   append "$_source_base" ".dotfile"
@@ -45,6 +45,14 @@ echo " "
 echo "Copying from dots to $HOME"
 echo " "
 for file in dots/.*[A-Za-z]; do
+  cp -vi "$file" $HOME
+done
+
+
+echo " "
+echo "Copying from dots/source to $HOME"
+echo " "
+for file in dots/source/.*[A-Za-z]; do
   cp -vi "$file" $HOME
 done
 
