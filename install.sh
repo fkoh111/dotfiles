@@ -9,6 +9,10 @@ echo " "
 DOTFILES=$PWD/dots/
 BASHRC=$PWD/bashrc/.bashrc
 
+
+## Source utils
+. $PWD/utils/utils.sh
+
 ## Enable nullglob
 shopt -s dotglob
 
@@ -28,7 +32,7 @@ done
 
 
 ## Append a source cmd to .bash_profile if it isn't there all ready
-grep -qxF 'source ~/.bashrc' ~/.bash_profile || echo 'source ~/.bashrc' >> ~/.bash_profile
+append 'source ~/.bashrc' ~/.bash_profile
 
 ## Disable nullglob
 shopt -u nullglob
