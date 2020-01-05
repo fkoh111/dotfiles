@@ -1,4 +1,1 @@
-source ~/.Renviron
-source ~/.Rprofile
 source ~/.alias
-source ~/.gitconfig
