@@ -26,16 +26,24 @@ fi
 
 
 echo " "
+echo "Appending to .dotfile"
+echo " "
+for file in dots/.*[A-Za-z]; do
+  BASE=$(basename $file)
+  SOURCE_BASE="source ~/$BASE"
+  append "$SOURCE_BASE" ".dotfile"
+done
+
+
+echo " "
 echo "Copying .dotfile TO $HOME"
 echo " "
-
 cp -vi .dotfile $HOME
 
 
 echo " "
 echo "Copying from dots to $HOME"
 echo " "
-
 for file in dots/.*[A-Za-z]; do
   cp -vi "$file" $HOME
 done
@@ -43,7 +51,6 @@ done
 
 ## Append a source cmd to .bash_profile (will not append if the cmd is already present)
 append "source ~/.dotfile" "$HOME/.bash_profile"
-
 
 ## Disable nullglob
 shopt -u nullglob
