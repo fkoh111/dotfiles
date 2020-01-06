@@ -1,2 +1,3 @@
 source ~/.alias
 source ~/.git_completion
+source ~/.add_branch
