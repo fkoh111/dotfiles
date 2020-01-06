@@ -1,3 +1,4 @@
 source ~/.add_alias
 source ~/.add_branch
 source ~/.add_git_completion
+source ~/.add_ls_color
