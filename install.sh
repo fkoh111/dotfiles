@@ -67,6 +67,20 @@ for dot in dots/sources/.add*[A-Za-z]; do
 done
 
 
+for dot in dots/boilerplates/.*[A-Za-z]; do
+  _boilerplate=$(basename $dot)
+
+  if [ -f $HOME/$_boilerplate ]; then
+    echo "Seems like there's an instance of $_boilerplate in $HOME"
+    echo " "
+  else
+    echo "Copying a boilerplate of $_boilerplate"
+    cp $PWD/dots/boilerplates/$_boilerplate $HOME/$_boilerplate
+    echo " "
+  fi
+done
+
+
 ## Append a source cmd to .bash_profile (will not append if the cmd is already present)
 append "source ~/$DOTFILE" "$HOME/$TARGET"
 
