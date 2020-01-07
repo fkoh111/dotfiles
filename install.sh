@@ -16,19 +16,21 @@ shopt -s dotglob
 
 
 ## Verifying .bash_profile in $HOME
-if [ -f $HOME/.bash_profile ]
-  then
-    echo "Seems like we have a .bash_profile"
-    echo "$HOME/.bash_profile"
-  else
+if [ -f $HOME/.bash_profile ]; then
+    echo "Seems like we have a .bash_profile: $HOME/.bash_profile"
+else
     echo "WHUT?! Why don't you have a .bash_profile"
     exit
 fi
 
+## Verify  .dotfile
+if [ ! -f .dotfile ]; then
+    touch .dotfile
+fi
 
 echo " "
-echo "Appending from dots/source to .dotfile"
-for file in dots/source/.*[A-Za-z]; do
+echo "Appending from dots/sources to .dotfile"
+for file in dots/sources/.add*[A-Za-z]; do
   _base=$(basename $file)
   _source_base="source ~/$_base"
   append "$_source_base" ".dotfile"
@@ -50,9 +52,9 @@ done
 
 
 echo " "
-echo "Copying from dots/source to $HOME"
+echo "Copying from dots/sources to $HOME"
 echo " "
-for file in dots/source/.*[A-Za-z]; do
+for file in dots/sources/.add*[A-Za-z]; do
   cp -vi "$file" $HOME
 done
 
