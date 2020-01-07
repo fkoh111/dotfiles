@@ -10,7 +10,7 @@ echo " "
 ## Globals
 TARGET=.bash_profile
 DOTFILE=.dotfile
-
+ALTERNATE=.bashrc
 
 ## Source utils
 source utils/utils.sh
@@ -20,11 +20,14 @@ source utils/utils.sh
 shopt -s dotglob
 
 
-## Verifying .bash_profile in $HOME
+## Verifying $TARGET in $HOME and changing accordingly
 if [ -f $HOME/$TARGET ]; then
     echo "Seems like we have a $TARGET in $HOME"
+elif [ -f $HOME/$ALTERNATE ]; then
+    echo "Changing to $ALTERNATE from $TARGET"
+    TARGET=$ALTERNATE
 else
-    echo "WHUT?! Why don't you have a $TARGET"
+    echo "WHUT?! Why don't you have a $TARGET?"
     exit
 fi
 
