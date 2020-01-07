@@ -16,17 +16,15 @@ shopt -s dotglob
 
 
 ## Verifying .bash_profile in $HOME
-if [ -f $HOME/.bash_profile ]
-  then
+if [ -f $HOME/.bash_profile ]; then
     echo "Seems like we have a .bash_profile: $HOME/.bash_profile"
-  else
+else
     echo "WHUT?! Why don't you have a .bash_profile"
     exit
 fi
 
 ## Verify  .dotfile
-if [ ! -f .dotfile ]
-  then
+if [ ! -f .dotfile ]; then
     touch .dotfile
 fi
 
