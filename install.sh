@@ -34,7 +34,8 @@ if [ ! -f $DOTFILE ]; then
 fi
 
 echo " "
-echo "Appending from dots/sources to .dotfile"
+echo "Appending from dots/sources to $DOTFILE"
+echo " "
 for file in dots/sources/.add*[A-Za-z]; do
   _base=$(basename $file)
   _source_base="source ~/$_base"
@@ -53,6 +54,7 @@ echo "Copying from dots to $HOME"
 echo " "
 for file in dots/.*[A-Za-z]; do
   cp -vi "$file" $HOME
+  echo " "
 done
 
 
@@ -61,6 +63,7 @@ echo "Copying from dots/sources to $HOME"
 echo " "
 for file in dots/sources/.add*[A-Za-z]; do
   cp -vi "$file" $HOME
+  echo " "
 done
 
 
