@@ -7,6 +7,11 @@ echo "-------------------------------------------"
 echo " "
 
 
+## Globals
+TARGET=.bash_profile
+DOTFILE=.dotfile
+
+
 ## Source utils
 source utils/utils.sh
 
@@ -16,16 +21,16 @@ shopt -s dotglob
 
 
 ## Verifying .bash_profile in $HOME
-if [ -f $HOME/.bash_profile ]; then
-    echo "Seems like we have a .bash_profile: $HOME/.bash_profile"
+if [ -f $HOME/$TARGET ]; then
+    echo "Seems like we have a $TARGET in $HOME"
 else
-    echo "WHUT?! Why don't you have a .bash_profile"
+    echo "WHUT?! Why don't you have a $TARGET"
     exit
 fi
 
 ## Verify  .dotfile
-if [ ! -f .dotfile ]; then
-    touch .dotfile
+if [ ! -f $DOTFILE ]; then
+    touch $DOTFILE
 fi
 
 echo " "
@@ -33,14 +38,14 @@ echo "Appending from dots/sources to .dotfile"
 for file in dots/sources/.add*[A-Za-z]; do
   _base=$(basename $file)
   _source_base="source ~/$_base"
-  append "$_source_base" ".dotfile"
+  append "$_source_base" "$DOTFILE"
 done
 
 
 echo " "
 echo "Copying .dotfile TO $HOME"
 echo " "
-cp -vi .dotfile $HOME
+cp -vi $DOTFILE $HOME
 
 
 echo " "
@@ -60,16 +65,16 @@ done
 
 
 ## Append a source cmd to .bash_profile (will not append if the cmd is already present)
-append "source ~/.dotfile" "$HOME/.bash_profile"
+append "source ~/$DOTFILE" "$HOME/$TARGET"
 
 ## Disable nullglob
 shopt -u nullglob
 
 
 echo " "
-echo "Sourcing bash_profile"
+echo "Sourcing $TARGET"
 echo " "
-source $HOME/.bash_profile
+source $HOME/$TARGET
 
 echo " "
 echo "-------------------------------------------"
