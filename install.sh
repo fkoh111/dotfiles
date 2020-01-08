@@ -6,35 +6,19 @@ echo "  About to setup dotfiles, aliases, etc."
 echo "-------------------------------------------"
 echo " "
 
+source utils/utils.sh
+
+## Enable nullglob
+shopt -s dotglob
+
 
 ## Globals
 TARGET=.bash_profile
 DOTFILE=.dotfile
 ALTERNATE=.bashrc
 
-## Source utils
-source utils/utils.sh
+init_files $TARGET $ALTERNATE $DOTFILE
 
-
-## Enable nullglob
-shopt -s dotglob
-
-
-## Verifying $TARGET in $HOME and changing accordingly
-if [ -f $HOME/$TARGET ]; then
-    echo "Seems like we have a $TARGET in $HOME"
-elif [ -f $HOME/$ALTERNATE ]; then
-    echo "Changing to $ALTERNATE from $TARGET"
-    TARGET=$ALTERNATE
-else
-    echo "WHUT?! Why don't you have a $TARGET?"
-    exit
-fi
-
-## Verify  .dotfile
-if [ ! -f $DOTFILE ]; then
-    touch $DOTFILE
-fi
 
 echo " "
 echo "Appending from dots/sources to $DOTFILE"
@@ -84,7 +68,7 @@ for dot in dots/boilerplates/.*[A-Za-z]; do
 done
 
 
-## Append a source cmd to .bash_profile (will not append if the cmd is already present)
+## Append a source cmd to $TARGET (Will NOT append if the cmd is already present)
 append "source ~/$DOTFILE" "$HOME/$TARGET"
 
 ## Disable nullglob
