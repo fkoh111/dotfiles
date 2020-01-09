@@ -40,3 +40,33 @@ init_files() {
   _init_target $_TARGET $_ALTERNATE
   _init_dotfile $_DOTFILE
 }
+
+_append_dotfile() {
+  _PATH=$1
+  
+  for dot in $_PATH; do
+    _BASE=$(basename $dot)
+    _SOURCE_BASE="source ~/$_base"
+    append "$_SOURCE_BASE" "$DOTFILE"
+  done
+}
+
+_copy() {
+  _PATH=$1
+  _DEST=$2
+
+  for file in $_PATH; do
+    cp -vi $_PATH $_DEST
+  done
+}
+
+setup_dotfile() {
+    _DOTFILE=$1
+    _PATH=$2
+    _DEST=$3
+
+    _append_dotfile 
+    _copy $DOTFILE $HOME
+    _copy 
+}
+
