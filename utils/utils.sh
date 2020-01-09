@@ -1,6 +1,6 @@
 #!/bin/bash
 
-append() {
+_append() {
   _ADD_EXPRESSION=$1
   _TARGET=$2  
   echo "Appending expression $_ADD_EXPRESSION to $_TARGET"
@@ -67,7 +67,7 @@ _copy_boilerplates() {
         echo "Seems like there's an instance of $_BOILERPLATE in $HOME"
         echo " "
       else
-        echo "Copying a boilerplate of $_BOILERPLATE"
+        echo "Copying a boilerplate of $_BOILERPLATE to $HOME"
         cp $PWD/dots/boilerplates/$_BOILERPLATE $HOME/$_BOILERPLATE
         echo " "
       fi
@@ -85,7 +85,7 @@ finalize() {
   _TARGET=$1
  _DOTFILE=$2
 
-  append "source ~/$_DOTFILE" "$HOME/$_TARGET"
+  _append "source ~/$_DOTFILE" "$HOME/$_TARGET"
   source $HOME/$_DOTFILE
   rm $_DOTFILE
 }
