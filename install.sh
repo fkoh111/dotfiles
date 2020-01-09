@@ -1,15 +1,11 @@
 #!/bin/bash
-
-echo " "
-echo "> About to setup dotfiles, aliases, etc."
-echo " "
+echo " > About to setup dotfiles, aliases, etc."
 
 # Enable nullglob
 shopt -s dotglob
 
 source utils/utils.sh
 
-# Globals
 TARGET=.bash_profile
 DOTFILE=.dotfile
 ALTERNATE=.bashrc
@@ -29,6 +25,4 @@ finalize $TARGET $DOTFILE
 # Disable nullglob
 shopt -u nullglob
 
-echo " "
-echo "> Splendid! You're all set :-D"
-echo " "
+echo " > Splendid! You're all set :-D"
