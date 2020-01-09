@@ -19,7 +19,7 @@ _init_target() {
      TARGET=$_ALTERNATE
   else
       echo " > WHUT?! Why don't you have a $_TARGET?"
-     exit
+     exit 1
   fi
 
 }
