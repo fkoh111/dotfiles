@@ -1,9 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------------------------------"
 echo "  About to setup dotfiles, aliases, etc."
-echo "-------------------------------------------"
 echo " "
 
 source utils/utils.sh
@@ -25,15 +23,15 @@ done
 
 copy_dots $DOTFILE
 
+finalize $TARGET $DOTFILE
+
 # Append source cmd to $TARGET
-append "source ~/$DOTFILE" "$HOME/$TARGET"
+#append "source ~/$DOTFILE" "$HOME/$TARGET"
 
 # Disable nullglob
 shopt -u nullglob
-source $HOME/$TARGET
+#source $HOME/$TARGET
 
 echo " "
-echo "-------------------------------------------"
 echo "  Splendid! You're all set :-D"
-echo "-------------------------------------------"
 echo " "

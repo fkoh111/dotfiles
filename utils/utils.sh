@@ -80,3 +80,12 @@ copy_dots() {
   _copy_dots $_DOTFILE
   _copy_boilerplates
 }
+
+finalize() {
+  _TARGET=$1
+ _DOTFILE=$2
+
+  append "source ~/$_DOTFILE" "$HOME/$_TARGET"
+  source $HOME/$_DOTFILE
+  rm $_DOTFILE
+}
