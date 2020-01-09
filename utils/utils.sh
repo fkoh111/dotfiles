@@ -41,27 +41,42 @@ init_files() {
   _init_dotfile $_DOTFILE
 }
 
-_append_dotfile() {
-  _PATH=$1
-  
-  for dot in $_PATH; do
-    _BASE=$(basename $dot)
-    _SOURCE_BASE="source ~/$_base"
-    append "$_SOURCE_BASE" "$DOTFILE"
-  done
+
+_copy_dots() {
+  _DOTFILE=$1
+
+    echo "Copy $_DOTFILE to $HOME"
+    cp -vi $_DOTFILE $HOME
+
+    echo "Copying from dots to $HOME"
+    for dot in dots/.*[A-Za-z]; do
+      cp -vi "$dot" $HOME
+    done
+
+    echo "Copying from dots/sources to $HOME"
+    for dot in dots/sources/.add*[A-Za-z]; do
+      cp -vi "$dot" $HOME
+    done
 }
 
-_copy() {
-  _PATH=$1
-  _DEST=$2
+_copy_boilerplates() {
+    for dot in dots/boilerplates/.*[A-Za-z]; do
+      _BOILERPLATE=$(basename $dot)
 
-  for file in $_PATH; do
-    cp -vi $_PATH $_DEST
-  done
+      if [ -f $HOME/$_BOILERPLATE ]; then
+        echo "Seems like there's an instance of $_BOILERPLATE in $HOME"
+        echo " "
+      else
+        echo "Copying a boilerplate of $_BOILERPLATE"
+        cp $PWD/dots/boilerplates/$_BOILERPLATE $HOME/$_BOILERPLATE
+        echo " "
+      fi
+    done
 }
 
-setup_dotfile() {
-    _append_dotfile dots/sources/.add\*[A-Za-z]
-    _copy $DOTFILE $HOME
-}
+copy_dots() {
+  _DOTFILE=$1
 
+  _copy_dots $_DOTFILE
+  _copy_boilerplates
+}

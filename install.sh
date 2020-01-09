@@ -1,57 +1,39 @@
 #!/bin/bash
 
+echo " "
 echo "-------------------------------------------"
-echo "  About to setup dotfiles, aliases, etc.   "
+echo "  About to setup dotfiles, aliases, etc."
 echo "-------------------------------------------"
+echo " "
 
 source utils/utils.sh
 
-## Enable nullglob
-shopt -s dotglob
-
-
-## Globals
+# Globals
 TARGET=.bash_profile
-ALTERNATE=.bashrc
 DOTFILE=.dotfile
+ALTERNATE=.bashrc
+# Enable nullglob
+shopt -s dotglob
 
 init_files $TARGET $ALTERNATE $DOTFILE
 
-setup_dotfile
-
-#echo " "
-#echo "Copying from dots/sources to $HOME"
-#echo " "
-#for dot in dots/sources/.add*[A-Za-z]; do
-#  cp -vi "$dot" $HOME
-#  echo " "
-#done
-
-
-for dot in dots/boilerplates/.*[A-Za-z]; do
-  _boilerplate=$(basename $dot)
-
-  if [ -f $HOME/$_boilerplate ]; then
-    echo "Seems like there's already an instance of $_boilerplate in $HOME"
-    echo " "
-  else
-    echo "Copying a boilerplate of $_boilerplate"
-    cp $PWD/dots/boilerplates/$_boilerplate $HOME/$_boilerplate
-    echo " "
-  fi
+for dot in dots/sources/.add*[A-Za-z]; do
+  _base=$(basename $dot)
+  _source_base="source ~/$_base"
+  append "$_source_base" "$DOTFILE"
 done
 
+copy_dots $DOTFILE
 
-## Append a source cmd to $TARGET (Will NOT append if the cmd is already present)
+# Append source cmd to $TARGET
 append "source ~/$DOTFILE" "$HOME/$TARGET"
 
-## Disable nullglob
+# Disable nullglob
 shopt -u nullglob
-
-
-echo "Sourcing $TARGET"
 source $HOME/$TARGET
 
+echo " "
 echo "-------------------------------------------"
 echo "  Splendid! You're all set :-D"
 echo "-------------------------------------------"
+echo " "
