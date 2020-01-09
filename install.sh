@@ -4,14 +4,15 @@ echo " "
 echo "  About to setup dotfiles, aliases, etc."
 echo " "
 
+# Enable nullglob
+shopt -s dotglob
+
 source utils/utils.sh
 
 # Globals
 TARGET=.bash_profile
 DOTFILE=.dotfile
 ALTERNATE=.bashrc
-# Enable nullglob
-shopt -s dotglob
 
 init_files $TARGET $ALTERNATE $DOTFILE
 
@@ -25,12 +26,8 @@ copy_dots $DOTFILE
 
 finalize $TARGET $DOTFILE
 
-# Append source cmd to $TARGET
-#append "source ~/$DOTFILE" "$HOME/$TARGET"
-
 # Disable nullglob
 shopt -u nullglob
-#source $HOME/$TARGET
 
 echo " "
 echo "  Splendid! You're all set :-D"
