@@ -1,78 +1,28 @@
 #!/bin/bash
+echo " > About to setup dotfiles, aliases, etc."
 
-echo " "
-echo "-------------------------------------------"
-echo "  About to setup dotfiles, aliases, etc."
-echo "-------------------------------------------"
-echo " "
-
-
-## Source utils
-source utils/utils.sh
-
-
-## Enable nullglob
+# Enable nullglob
 shopt -s dotglob
 
+source utils/utils.sh
 
-## Verifying .bash_profile in $HOME
-if [ -f $HOME/.bash_profile ]; then
-    echo "Seems like we have a .bash_profile: $HOME/.bash_profile"
-else
-    echo "WHUT?! Why don't you have a .bash_profile"
-    exit
-fi
+TARGET=.bash_profile
+DOTFILE=.dotfile
+ALTERNATE=.bashrc
 
-## Verify  .dotfile
-if [ ! -f .dotfile ]; then
-    touch .dotfile
-fi
+init_files $TARGET $ALTERNATE $DOTFILE
 
-echo " "
-echo "Appending from dots/sources to .dotfile"
-for file in dots/sources/.add*[A-Za-z]; do
-  _base=$(basename $file)
+for dot in dots/sources/.add*[A-Za-z]; do
+  _base=$(basename $dot)
   _source_base="source ~/$_base"
-  append "$_source_base" ".dotfile"
+  _append "$_source_base" "$DOTFILE"
 done
 
+copy_dots $DOTFILE
 
-echo " "
-echo "Copying .dotfile TO $HOME"
-echo " "
-cp -vi .dotfile $HOME
+finalize $TARGET $DOTFILE
 
-
-echo " "
-echo "Copying from dots to $HOME"
-echo " "
-for file in dots/.*[A-Za-z]; do
-  cp -vi "$file" $HOME
-done
-
-
-echo " "
-echo "Copying from dots/sources to $HOME"
-echo " "
-for file in dots/sources/.add*[A-Za-z]; do
-  cp -vi "$file" $HOME
-done
-
-
-## Append a source cmd to .bash_profile (will not append if the cmd is already present)
-append "source ~/.dotfile" "$HOME/.bash_profile"
-
-## Disable nullglob
+# Disable nullglob
 shopt -u nullglob
 
-
-echo " "
-echo "Sourcing bash_profile"
-echo " "
-source $HOME/.bash_profile
-
-echo " "
-echo "-------------------------------------------"
-echo "  Splendid! You're all set :-D"
-echo "-------------------------------------------"
-echo " "
+echo " > Splendid! You're all set :-D"
