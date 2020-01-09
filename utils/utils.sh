@@ -61,12 +61,7 @@ _copy() {
 }
 
 setup_dotfile() {
-    _DOTFILE=$1
-    _PATH=$2
-    _DEST=$3
-
-    _append_dotfile 
+    _append_dotfile dots/sources/.add\*[A-Za-z]
     _copy $DOTFILE $HOME
-    _copy 
 }
 

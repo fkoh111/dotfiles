@@ -20,37 +20,12 @@ init_files $TARGET $ALTERNATE $DOTFILE
 setup_dotfile
 
 #echo " "
-#echo "Appending from dots/sources to $DOTFILE"
+#echo "Copying from dots/sources to $HOME"
 #echo " "
 #for dot in dots/sources/.add*[A-Za-z]; do
-#  _base=$(basename $dot)
-#  _source_base="source ~/$_base"
-#  append "$_source_base" "$DOTFILE"
-#done
-
-
-#echo " "
-#echo "Copying .dotfile TO $HOME"
-#echo " "
-#cp -vi $DOTFILE $HOME
-
-
-#echo " "
-#echo "Copying from dots to $HOME"
-#echo " "
-#for dot in dots/.*[A-Za-z]; do
 #  cp -vi "$dot" $HOME
 #  echo " "
 #done
-
-
-echo " "
-echo "Copying from dots/sources to $HOME"
-echo " "
-for dot in dots/sources/.add*[A-Za-z]; do
-  cp -vi "$dot" $HOME
-  echo " "
-done
 
 
 for dot in dots/boilerplates/.*[A-Za-z]; do

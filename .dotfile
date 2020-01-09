@@ -1,5 +1,1 @@
-source ~/.add_alias
-source ~/.add_branch
-source ~/.add_git_completion
-source ~/.add_grep_highlight
-source ~/.add_ls_highlight
+source ~/
