@@ -1,10 +1,8 @@
 #!/bin/bash
 
-echo " "
 echo "-------------------------------------------"
-echo "  About to setup dotfiles, aliases, etc."
+echo "  About to setup dotfiles, aliases, etc.   "
 echo "-------------------------------------------"
-echo " "
 
 source utils/utils.sh
 
@@ -14,8 +12,8 @@ shopt -s dotglob
 
 ## Globals
 TARGET=.bash_profile
-DOTFILE=.dotfile
 ALTERNATE=.bashrc
+DOTFILE=.dotfile
 
 init_files $TARGET $ALTERNATE $DOTFILE
 
@@ -58,7 +56,7 @@ for dot in dots/boilerplates/.*[A-Za-z]; do
   _boilerplate=$(basename $dot)
 
   if [ -f $HOME/$_boilerplate ]; then
-    echo "Seems like there's an instance of $_boilerplate in $HOME"
+    echo "Seems like there's already an instance of $_boilerplate in $HOME"
     echo " "
   else
     echo "Copying a boilerplate of $_boilerplate"
@@ -75,13 +73,9 @@ append "source ~/$DOTFILE" "$HOME/$TARGET"
 shopt -u nullglob
 
 
-echo " "
 echo "Sourcing $TARGET"
-echo " "
 source $HOME/$TARGET
 
-echo " "
 echo "-------------------------------------------"
 echo "  Splendid! You're all set :-D"
 echo "-------------------------------------------"
-echo " "
