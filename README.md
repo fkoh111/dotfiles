@@ -34,17 +34,17 @@ _dotfiles and their respective categories are stored within the following tree l
 
 #### FAQ
 
-**Q:** _Why are you adding a prefix to category two dotfiles?_  
+**Q:** _Why are you adding a prefix to category 2 dotfiles?_  
 **A:** _I like the fact that I can easily distinguish them from other files when visiting `$HOME`._
 
 **Q:** _Ok, but then, why are you not adding prefixes to dotfiles from category 1 or 3?!_  
 **A:** _If I added prefixes for 1 or 3, then a lot of applications wouldn't be able to find a given dotfile unless I tweaked the application settings... It would litterally defeat the purpose of doing this dotfile thingy._
 
-**Q:** _Why did you choose such a silly prefix, `add*`, I don't get it?!_  
+**Q:** _Why did you choose such a silly prefix, `add_*`, I don't get it?!_  
 **A:** _Well, the files are being **added** to bash via the proxy dotfile. So I think it's a fair enough prefix._
 
 **Q:** _Why are you including the boilerplate category of dotfiles? I mean, if the files are empty, then they can't really do anything!_  
-**A:** _Sure, that's right. But I like to think of them as small reminders. The thing is, that I am supposed to be reminded to update them whenever I've executed the installer._
+**A:** _Sure, that's right. But I like to think of them as small reminders. The thing is, that I am supposed to be reminded to update them whenever I've executed the installer (assumming that the ones in `$HOME` aren't already populated; in that scenario, the installer will not overwrite the (former) boilerplate)._
 
 #### Inspired by various repos, e.g.:
 
