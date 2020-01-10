@@ -1,0 +1,23 @@
+# Sandbox
+sandbox.R
+sandbox.py
+sandbox.sh
+sandbox.js
+
+# Python
+__pycache__
+*.pyc
+*.pc
+*.pyo
+.pytest_cache/
+
+# R
+.Rhistory
+.httr-oauth
+.Rproj.user
+*.Rproj
+.RData
+
+# misc
+.vscode
+
