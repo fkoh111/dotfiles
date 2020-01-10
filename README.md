@@ -8,3 +8,5 @@ As the name implies, a curated selection of .dotfiles used across unix machines
 
 https://github.com/AndersBallegaard/dotfiles  
 https://github.com/sorenvind/dev-env
+https://dotfiles.github.io/
+https://github.com/mads-hartmann/dotfilesv2

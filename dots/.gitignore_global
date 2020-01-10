@@ -1,4 +1,4 @@
-# Sandbox
+# Sandboxes
 sandbox.R
 sandbox.py
 sandbox.sh
@@ -20,4 +20,3 @@ __pycache__
 
 # misc
 .vscode
-
