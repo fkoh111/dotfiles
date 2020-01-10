@@ -1,6 +1,6 @@
 # dotfiles
 
-As the name implies, a curated selection of .dotfiles used across unix machines
+As the name implies, a curated selection of .dotfiles used across `*nix` machines
 
 
 
