@@ -3,3 +3,4 @@
     email = frederik_kok@icloud.com
 [core]
     editor = nano
+    excludesfile =~/.gitignore_global

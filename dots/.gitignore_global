@@ -1,0 +1,19 @@
+# Python
+__pycache__
+*.pyc
+*.pc
+*.pyo
+.pytest_cache/
+
+# R
+.Rhistory
+.httr-oauth
+.Rproj.user
+*.Rproj
+
+# misc
+.vscode
+sandbox.R
+sandbox.py
+sandbox.sh
+sandbox.js
