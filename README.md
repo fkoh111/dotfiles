@@ -8,12 +8,12 @@ In the context of this project, a dotfile can belong to one of three categories:
 1. As a regular dotfile. A well known example of such a file is a `.gitconfig`. A general trait of these files are that they contain personal preferences but no sensitive information. Thus they can be shared. Another trait is that they (in general) need to be located in `$HOME` if other programs are supposed to consume them.  
 Regular dotfiles are in this project stored in `dots/` and will be copied to `$HOME` by the installer.  
 
-2. As a prefixed `.add_*` dotfile. In general these files contain aliases, environment variables and all the other good but greasy stuff you would normally find in a cluttered `~/.bash*` file.  
+2. As a prefixed `.add_*` dotfile. In general these files contain aliases, environment variables and all the other good (but greasy) stuff you will normally find in a cluttered `~/.bash*` file.  
 Dotfiles belonging to this category will automatically be sourced from a proxy file (see DOTFILE variable in `install.sh`) that will be placed in `$HOME` and sourced from  `~/.bash*` after you've executed the installer.  
-The reason for doing so is to minimize cluttering.  
+The reason for doing so is to minimize clutter in your `~/.bash*`.  
 The prefixed dotfiles are stored in `dots/adds/` and will be copied to `$HOME` by the installer.  
 
-3. As boilerplates. This type of dotfile is a templates for sensitive information, often in the form of an empty file (e.g., `.Renviron`). Upon running the installer, you're supposed to populate these with tokens and secrets in `$HOME` __(Never within the project!)__.  
+3. As boilerplates. This type of dotfile is a templates for sensitive information, often in the form of an empty file (e.g., `.Renviron`). Upon running the installer, you're supposed to populate these with tokens and secrets in `$HOME` __(Never within the project before running the installer!)__.  
 The boilerplates are stored in `dots/boilerplates/` and will be copied to `$HOME` by the installer.  
 
 
