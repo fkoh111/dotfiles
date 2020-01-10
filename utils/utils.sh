@@ -53,8 +53,8 @@ _copy_dots() {
       cp -vi "$dot" $HOME
     done
 
-    echo " > Copying from dots/sources to $HOME"
-    for dot in dots/sources/.add*[A-Za-z]; do
+    echo " > Copying from dots/adds to $HOME"
+    for dot in dots/adds/.add*[A-Za-z]; do
       cp -vi "$dot" $HOME
     done
 }
