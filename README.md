@@ -1,6 +1,6 @@
 # dotfiles
 
-As the name implies, a selection of dotfiles that I use across `*nix` machines.*
+As the name implies, a selection of dotfiles that I use across `*nix` machines.
 
 For setup: `./install.sh`
 
