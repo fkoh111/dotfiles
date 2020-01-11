@@ -1,6 +1,6 @@
 # dotfiles
 
-As the name implies, a selection of dotfiles that I can use across `*nix` machines.
+As the name implies, a selection of dotfiles that I use across `*nix` machines.*
 
 For setup: `./install.sh`
 
@@ -31,6 +31,11 @@ In the context of this project, a dotfile can belong to one of three categories:
 ```
 
 _dotfiles and their respective categories are stored within the following tree like structure_
+
+
+> __NB:__ Currently the `.add_git_completion` file should not be included in the proxy file on a Linux machine since Linux come with native support for git completion already.
+Therefore: remove the `.add_git_completion` file before executing the installer on a Linux machine.  
+
 
 #### FAQ
 
