@@ -12,6 +12,7 @@ ALTERNATE=.bashrc
 
 init_files $TARGET $ALTERNATE $DOTFILE
 
+#TODO: Wrap as function please....
 for dot in dots/adds/.add*[A-Za-z]; do
   _base=$(basename $dot)
   _source_base="source ~/$_base"
