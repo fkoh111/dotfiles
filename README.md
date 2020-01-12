@@ -1,11 +1,12 @@
 # dotfiles
 
-As the name implies, a selection of dotfiles that I use across `*nix` machines.
+As the name implies, a selection of dotfiles that I use across `*nix` machines.  
 
 For setup: `./install.sh`
 
 For some context on folder structure, see **Context**.  
-For debating my (schizophrenic) self, see **FAQ**.
+On those dots that are not OS agnostic, see: **!Agnostic**.  
+For debating my (schizophrenic) self, see **FAQ**.  
 
 #### Context
 
@@ -33,8 +34,19 @@ In the context of this project, a dotfile can belong to one of three categories:
 _dotfiles and their respective categories are stored within the following tree like structure_
 
 
-> __NB:__ Currently the `.add_git_completion` file should not be included in the proxy file on a Linux machine since Linux come with native support for git completion already.  
-Therefore: remove the `.add_git_completion` file before executing the installer on a Linux machine.  
+#### !Agnostic
+
+Sometimes a dotfile might not be OS agnostic. A dot that is not OS agnostic, is most likely a category 2 dotfile. Now, how could you deal with such a file?  
+
+1. Assuming that you're realizing incompatability issues _after_ you've executed the installer: remove the source cmd for the given dotfile in your proxy file and re-source your `bash*` file.  
+
+2. Assuming that you know that a given dotfile will be problematic before you've executed the intaller: delete the dotfile and execute the installer.  
+
+The table below maps out dotfiles that are known to be problematic across OS'.
+
+|File|Comment|OS|
+|---|---|---|
+|`.add_git_completion`|Currently the `.add_git_completion` file should not be included in the proxy file on a Linux machine since Linux comes prebaked with support for git completion.|Linux (Ubuntu LTS 18.04)|  
 
 
 #### FAQ
