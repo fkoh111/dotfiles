@@ -87,3 +87,14 @@ finalize() {
   source $HOME/$_DOTFILE
   rm $_DOTFILE
 }
+
+append_sources() {
+  _PATH=$1
+  _DOTFILE=$2
+
+  for dot in $_PATH; do
+    _BASE=$(basename $dot)
+    _SOURCE_BASE="source ~/$_BASE"
+    _append "$_SOURCE_BASE" "$_DOTFILE"
+  done
+}
