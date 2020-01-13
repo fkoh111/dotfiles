@@ -89,10 +89,9 @@ finalize() {
 }
 
 append_sources() {
-  _PATH=$1
-  _DOTFILE=$2
+  _DOTFILE=$1
 
-  for dot in $_PATH; do
+  for dot in dots/adds/.add*[A-Za-z]; do
     _BASE=$(basename $dot)
     _SOURCE_BASE="source ~/$_BASE"
     _append "$_SOURCE_BASE" "$_DOTFILE"

@@ -12,7 +12,7 @@ ALTERNATE=.bashrc
 
 init_files $TARGET $ALTERNATE $DOTFILE
 
-append_sources dots/adds/.add\*[A-Za-z]  $DOTFILE
+append_sources $DOTFILE
 
 copy_dots $DOTFILE
 
