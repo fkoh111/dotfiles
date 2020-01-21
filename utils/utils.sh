@@ -118,8 +118,9 @@ _osx() {
 }
 
 configure_os() {
-  if [ $TARGET=.bash_profile ]; then
-    echo " > Seems like you're running OSX"
-    _osx
-  fi
+  _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}')
+ 
+  if [ "$_os" == "Mac OS X" ]; then
+      echo " > Seems like you're running OSX"
+   fi
 }
