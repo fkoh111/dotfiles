@@ -97,3 +97,29 @@ append_sources() {
     _append "$_SOURCE_BASE" "$_DOTFILE"
   done
 }
+
+_configure_osx() {
+    echo " > Configuring OSX"
+
+    defaults write com.apple.finder ShowPathbar -bool true
+    defaults write com.apple.finder ShowStatusBar -bool true
+    defaults write com.apple.dock show-process-indicators -bool true
+    chflags nohidden ~/Library
+}
+
+_osx() {
+  read -p " > Should we configure OSX? (y/n)" -n 1 -r
+  echo 
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+      _configure_osx
+    else
+      echo " > Skipping OSX configuration"
+  fi
+}
+
+configure_os() {
+  if [ $TARGET=.bash_profile ]; then
+    echo " > Seems like you're running OSX"
+    _osx
+  fi
+}
