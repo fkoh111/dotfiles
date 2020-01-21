@@ -1,12 +1,14 @@
-# dotfiles
+# dotfiles et al.
 
-A selection of dotfiles that I use across `*nix` machines.  
+A selection of dotfiles (and OS settings) that I use across `*nix` machines.  
 
 For setup: `./install.sh`
 
 For some context on folder structure, see **Context**.  
 On those dots that are not OS agnostic, see: **!Agnostic**.  
 For debating my (schizophrenic) self, see **FAQ**.  
+
+> _Strictly speaking, the OS settings are only for OSX, but will not be invoked on Linux..._
 
 #### Context
 
