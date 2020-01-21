@@ -18,6 +18,10 @@ copy_dots $DOTFILE
 
 finalize $TARGET $DOTFILE
 
+echo " > Looking into environment settings"
+
+configure_os
+
 # Disable nullglob
 shopt -u nullglob
 
