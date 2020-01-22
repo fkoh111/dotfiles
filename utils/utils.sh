@@ -117,8 +117,20 @@ _osx() {
   fi
 }
 
+_verify_os() {
+  if ! type "$sw_vers" 2>/dev/null; then
+    echo " > There's only environment settings for OSX."
+    echo " > Skipping this step..."
+    _os=false
+    echo $_os
+  else 
+    _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}');
+    echo $_os
+  fi
+}
+
 configure_os() {
-  _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}')
+  _verify_os
 
   if [ "$_os" == "Mac OS X" ]; then
       echo " > Seems like you're running OSX"
