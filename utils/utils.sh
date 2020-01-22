@@ -104,6 +104,10 @@ _configure_osx() {
     defaults write com.apple.finder ShowPathbar -bool true
     defaults write com.apple.finder ShowStatusBar -bool true
     defaults write com.apple.dock show-process-indicators -bool true
+    defaults write com.apple.dock show-recents -bool FALSE
+    killall Dock
+
+
     chflags nohidden ~/Library
 }
 
