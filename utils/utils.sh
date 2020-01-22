@@ -118,31 +118,22 @@ _osx() {
 }
 
 _verify_os() {
-  if ! type "$sw_vers" 2>/dev/null; then
-    echo " > There's only environment settings for OSX."
-    echo " > Skipping this step..."
-    _os=false
-    echo $_os
-  else 
-    _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}');
-    echo $_os
-  fi
-}
-
-__verify_os() {
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-esac
-echo ${machine}
+  _os="$(uname -s)"
+    case "${_os}" in
+      Linux*)     _machine=Linux;;
+      Darwin*)    _machine=Mac;;
+    esac
+  echo ${_machine}
 }
 
 configure_os() {
-  _verify_os
+  _os=$(_verify_os)
 
-  if [ "$_os" == "Mac OS X" ]; then
+  if [ "$_os" == Mac ]; then
       echo " > Seems like you're running OSX"
-      _osx
-   fi
+      #_osx
+    else
+      echo " > There's no environment settings for your machine"
+      echo " > Skipping this step..."
+  fi
 }
