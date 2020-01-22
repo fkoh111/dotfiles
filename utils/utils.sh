@@ -107,7 +107,7 @@ _configure_osx() {
     chflags nohidden ~/Library
 }
 
-_prompt_osx() {
+_osx() {
   read -p " > Should we configure OSX? (y/n)" -n 1 -r
   echo 
   if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -117,20 +117,11 @@ _prompt_osx() {
   fi
 }
 
-_verify_os() {
-  if type "$sw_vers" 2>/dev/null; then
-    _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}');
-  else
-    echo " > There's only environment settings for OSX."
-    echo " > Skipping this step..."
-  fi
-}
-
 configure_os() {
-  _verify_os
+  _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}')
 
   if [ "$_os" == "Mac OS X" ]; then
       echo " > Seems like you're running OSX"
-      _prompt_osx
-  fi
+      _osx
+   fi
 }
