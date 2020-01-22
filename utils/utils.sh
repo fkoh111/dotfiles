@@ -117,11 +117,23 @@ _osx() {
   fi
 }
 
-configure_os() {
-  _os=$(sw_vers | awk 'NR==1{print $2, $3, $4}')
+_verify_os() {
+  _os="$(uname -s)"
+    case "${_os}" in
+      Linux*)     _machine=Linux;;
+      Darwin*)    _machine=Mac;;
+    esac
+  echo ${_machine}
+}
 
-  if [ "$_os" == "Mac OS X" ]; then
-      echo " > Seems like you're running OSX"
+configure_os() {
+  _os=$(_verify_os)
+
+  if [ "$_os" == Mac ]; then
+      echo " > Seems like you're using a Mac"
       _osx
-   fi
+    else
+      echo " > There's no environment settings for your machine"
+      echo " > Skipping this step..."
+  fi
 }
