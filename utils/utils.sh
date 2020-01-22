@@ -129,6 +129,15 @@ _verify_os() {
   fi
 }
 
+__verify_os() {
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+esac
+echo ${machine}
+}
+
 configure_os() {
   _verify_os
 
