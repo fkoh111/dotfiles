@@ -130,8 +130,8 @@ configure_os() {
   _os=$(_verify_os)
 
   if [ "$_os" == Mac ]; then
-      echo " > Seems like you're running OSX"
-      #_osx
+      echo " > Seems like you're using a Mac"
+      _osx
     else
       echo " > There's no environment settings for your machine"
       echo " > Skipping this step..."
