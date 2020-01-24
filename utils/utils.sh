@@ -76,7 +76,7 @@ copy_dots() {
   _DOTFILE=$1
 
   _copy_dots $_DOTFILE
-  _copy_boilerplates
+  #_copy_boilerplates
 }
 
 finalize() {
