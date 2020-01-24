@@ -5,8 +5,12 @@
 # Set these options in every single process
 options(repos = c(CRAN = "https://cran.rstudio.org"))
 
-
 # Set these options when running an interactive process
 if (interactive()) {
   options(prompt = " R > ")
 }
+
+# Prompting primary location for Rpackages
+rpkgs <- .libPaths()[[1]]
+message("Rpkgs are being stored and read from ", rpkgs)
+message(" ")
