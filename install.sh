@@ -26,3 +26,5 @@ configure_os
 shopt -u nullglob
 
 echo " > Splendid! You're all set :-D"
+echo " "
+echo " > Remember to add secrets etc. to appropriate dotfiles!"
