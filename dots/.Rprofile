@@ -11,6 +11,5 @@ if (interactive()) {
 }
 
 # Prompting primary location for Rpackages
-rpkgs <- .libPaths()[[1]]
-message("Rpkgs are being stored and read from ", rpkgs)
+message("Rpkgs are being stored and read from ", .libPaths()[[1]])
 message(" ")
