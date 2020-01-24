@@ -10,6 +10,10 @@ if (interactive()) {
   options(prompt = " R > ")
 }
 
+# Prompting R interpreter
+message(" > R is using an interpreter at: ", R.home())
+message(" ")
+
 # Prompting primary location for Rpackages
-message("Rpkgs are being stored and read from ", .libPaths()[[1]])
+message(" > Rpkgs are being stored and read from ", .libPaths()[[1]])
 message(" ")
