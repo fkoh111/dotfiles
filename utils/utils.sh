@@ -81,7 +81,7 @@ copy_dots() {
 
 finalize() {
   _TARGET=$1
- _DOTFILE=$2
+  _DOTFILE=$2
 
   _append "source ~/$_DOTFILE" "$HOME/$_TARGET"
   source $HOME/$_DOTFILE
