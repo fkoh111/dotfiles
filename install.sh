@@ -1,5 +1,7 @@
 #!/bin/bash
+echo "*******************************************"
 echo " > About to setup dotfiles, aliases, etc."
+echo "*******************************************"
 
 # Enable nullglob
 shopt -s dotglob
@@ -24,6 +26,7 @@ configure_os
 
 # Disable nullglob
 shopt -u nullglob
-
+echo "**************************************************************"
 echo " > Splendid! You're all set :-D"
 echo " > Pls Remember to add secrets etc. to appropriate dotfiles!"
+echo "**************************************************************"

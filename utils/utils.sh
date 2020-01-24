@@ -144,6 +144,7 @@ _pour_brew() {
   brew cask install whatsapp
   brew cask install psequel
   brew cask install rstudio
+  echo " > Brew is over!"
 
   }
 
