@@ -107,7 +107,6 @@ _configure_osx() {
     defaults write com.apple.dock show-recents -bool false
     killall Dock
 
-
     chflags nohidden ~/Library
 }
 
@@ -118,6 +117,16 @@ _osx() {
       _configure_osx
     else
       echo " > Skipping OSX configuration"
+  fi
+}
+
+_brew() {
+  read -p " > Should we setup brew and all that jazz? (y/n)" -n 1 -r
+  echo 
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+      ./utils/brew.sh
+    else
+      echo " > Skipping all that jazz!"
   fi
 }
 
@@ -136,6 +145,7 @@ configure_os() {
   if [ "$_os" == Mac ]; then
       echo " > Seems like you're using a Mac"
       _osx
+      _brew
     else
       echo " > There's no environment settings for your machine"
       echo " > Skipping this step..."
