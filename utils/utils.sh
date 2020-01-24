@@ -98,6 +98,10 @@ append_sources() {
   done
 }
 
+
+
+
+
 _configure_osx() {
     echo " > Configuring OSX"
 
@@ -109,6 +113,39 @@ _configure_osx() {
 
     chflags nohidden ~/Library
 }
+
+_pour_brew() {
+  echo " > About to pour brew...."
+
+  if test ! $(which brew)
+    then
+  echo " > Installing brew"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew doctor
+  fi
+
+
+  echo " > Installing utils via brew"
+  brew install git
+  brew install curl
+  brew install wget
+  brew install tree
+  brew install htop
+  brew install postgres
+  brew install r
+
+  echo " > Installing applications via brew cask"
+  brew cask install docker
+  brew cask install google-chrome
+  brew cask install firefox
+  brew cask install spotify
+  brew cask install visual-studio-code
+  brew cask install 1password
+  brew cask install whatsapp
+  brew cask install psequel
+  brew cask install rstudio
+
+  }
 
 _osx() {
   read -p " > Should we configure OSX? (y/n)" -n 1 -r
@@ -124,7 +161,7 @@ _brew() {
   read -p " > Should we setup brew and all that jazz? (y/n)" -n 1 -r
   echo 
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-      ./utils/brew.sh
+      _pour_brew
     else
       echo " > Skipping all that jazz!"
   fi
