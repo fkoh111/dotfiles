@@ -133,6 +133,8 @@ _pour_brew() {
   brew install htop
   brew install postgres
   brew install r
+  brew install ghostscript
+  brew install imagemagick
 
   echo " > Installing applications via brew cask"
   brew cask install docker
