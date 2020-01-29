@@ -135,6 +135,7 @@ _pour_brew() {
   brew install r
   brew install ghostscript
   brew install imagemagick
+  brew install pandoc-citeproc
 
   echo " > Installing applications via brew cask"
   brew cask install docker
