@@ -57,6 +57,11 @@ _copy_dots() {
     for dot in dots/adds/.add*[A-Za-z]; do
       cp -vi "$dot" $HOME
     done
+
+    echo " > Copying from dots/ssh to $HOME/.ssh"
+    for dot in dots/ssh/*[A-Za-z]; do
+      cp -vi "$dot" "$HOME/.ssh"
+    done
 }
 
 _copy_boilerplates() {
