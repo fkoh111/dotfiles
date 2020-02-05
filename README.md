@@ -12,10 +12,13 @@ For debating my (schizophrenic) self, see **FAQ**.
 
 #### Context
 
-In the context of this project, a dotfile can be one of two:
+In the context of this project, a dotfile can be one of three:
 
 1. A regular dotfile. A well known example of such a file is a `.gitconfig`. A general trait of these is that they (in general) need to be located in `$HOME` if other programs are supposed to consume them.  
 Regular dotfiles are in this project stored in `dots/` and will be copied to `$HOME` by the installer.
+
+2. A regular dotfile with dedicated location. An example is the ssh `config` file, that isn't stored in `$HOME`, but rather in some dedicated location, e.g. within `~/.ssh/`.
+Regular dotfiles with dedicated locations wil be copied to their dedicated location by the installer.
 
 2. As a prefixed `.add_*` dotfile. In general these files contain aliases, environment variables and all the other good (but greasy) stuff you will normally find in a cluttered `~/.bash*` file.  
 Dotfiles belonging to this category will automatically be sourced from a proxy file (see DOTFILE variable in `install.sh`) that will be copied to `$HOME` and sourced from `~/.bash*` after you've executed the installer.  
