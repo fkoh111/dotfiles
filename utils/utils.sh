@@ -154,6 +154,8 @@ _pour_brew() {
   brew cask install psequel
   brew cask install rstudio
   brew cask install mactex
+  brew cask install cyberduck
+
   echo " > Brew is over!"
 
   }
