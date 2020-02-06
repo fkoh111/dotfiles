@@ -114,6 +114,13 @@ _configure_osx() {
     defaults write com.apple.finder ShowStatusBar -bool true
     defaults write com.apple.dock show-process-indicators -bool true
     defaults write com.apple.dock show-recents -bool false
+
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+    defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+    defaults write -g ApplePressAndHoldEnabled -bool false
+    defaults write NSGlobalDomain KeyRepeat -int 2
+    defaults write NSGlobalDomain InitialKeyRepeat -int 25
+    
     killall Dock
 
     chflags nohidden ~/Library

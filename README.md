@@ -59,3 +59,4 @@ https://github.com/sorenvind/dev-env
 https://dotfiles.github.io/  
 https://github.com/mads-hartmann/dotfilesv2  
 https://github.com/skovhus/setup  
+https://wilsonmar.github.io/dotfiles/  
