@@ -37,7 +37,7 @@ The table below maps out dotfiles that are known to be problematic across OS'.
 
 |File|Comment|OS|
 |---|---|---|
-|`.add_git_completion`|Currently the `.add_git_completion` file should not be included in the proxy file on a Linux machine since Linux comes prebaked with support for git completion.|Linux (Ubuntu LTS 18.04)|  
+|`.add_git_completion`|Currently the `.add_git_completion` file should not be included in the proxy file on a Linux machine|Linux (Ubuntu LTS 18.04)|  
 
 
 #### FAQ
