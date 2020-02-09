@@ -149,6 +149,7 @@ _pour_brew() {
   brew install imagemagick
   brew install pandoc-citeproc
   brew install qpdf
+  brew install nmap
 
   echo " > Installing applications via brew cask"
   brew cask install docker
