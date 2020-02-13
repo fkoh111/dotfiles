@@ -163,6 +163,7 @@ _pour_brew() {
   brew cask install rstudio
   brew cask install mactex
   brew cask install cyberduck
+  brew cask install insomnia
 
   echo " > Brew is over!"
 
