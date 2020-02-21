@@ -150,6 +150,8 @@ _pour_brew() {
   brew install pandoc-citeproc
   brew install qpdf
   brew install nmap
+  brew install node
+  brew install yarn
 
   echo " > Installing applications via brew cask"
   brew cask install docker
