@@ -4,3 +4,4 @@
 [core]
     editor = nano
     excludesfile =~/.gitignore_global
+    ignorecase = false
