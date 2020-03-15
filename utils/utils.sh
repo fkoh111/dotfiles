@@ -152,6 +152,8 @@ _pour_brew() {
   brew install nmap
   brew install node
   brew install yarn
+  brew tap heroku/brew
+  brew install heroku
 
   echo " > Installing applications via brew cask"
   brew cask install docker
