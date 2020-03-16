@@ -154,6 +154,7 @@ _pour_brew() {
   brew install yarn
   brew tap heroku/brew
   brew install heroku
+  brew cask install owasp-zap
 
   echo " > Installing applications via brew cask"
   brew cask install docker
