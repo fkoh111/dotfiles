@@ -155,6 +155,7 @@ _pour_brew() {
   brew tap heroku/brew
   brew install heroku
   brew cask install owasp-zap
+  brew install imagemagick@6
 
   echo " > Installing applications via brew cask"
   brew cask install docker
