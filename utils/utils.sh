@@ -171,6 +171,7 @@ _pour_brew() {
   brew cask install cyberduck
   brew cask install insomnia
   brew cask install owasp-zap
+  brew cask install inkscape
 
   echo " > Brew is over!"
 
