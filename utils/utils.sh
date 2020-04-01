@@ -154,8 +154,8 @@ _pour_brew() {
   brew install yarn
   brew tap heroku/brew
   brew install heroku
-  brew cask install owasp-zap
   brew install imagemagick@6
+  brew install librsvg
 
   echo " > Installing applications via brew cask"
   brew cask install docker
@@ -170,6 +170,8 @@ _pour_brew() {
   brew cask install mactex
   brew cask install cyberduck
   brew cask install insomnia
+  brew cask install owasp-zap
+  brew cask install inkscape
 
   echo " > Brew is over!"
 
