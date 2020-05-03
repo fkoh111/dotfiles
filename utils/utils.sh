@@ -156,6 +156,7 @@ _pour_brew() {
   brew install heroku
   brew install imagemagick@6
   brew install librsvg
+  brew install azure-cli
 
   echo " > Installing applications via brew cask"
   brew cask install docker
