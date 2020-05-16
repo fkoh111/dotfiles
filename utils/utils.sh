@@ -174,6 +174,7 @@ _pour_brew() {
   brew cask install owasp-zap
   brew cask install inkscape
   brew cask install logitech-camera-settings
+  brew cask install diffmerge
 
   echo " > Brew is over!"
 
