@@ -39,12 +39,6 @@ _pour_brew() {
   brew install azure-cli
   brew install jmeter
 
-# Hardly relevant for the future
-#  brew install postgres
-#  brew tap heroku/brew
-#  brew install heroku
-#  brew install librsvg
-
 # Dependencies
   brew install ghostscript
   brew install imagemagick
@@ -59,17 +53,14 @@ _pour_brew() {
   brew install yarn
   brew install java
   brew install python
-  
-  echo " > Installing applications via brew cask"
 
 # Hardly relevant for the future
-#  brew cask install psequel
-#  brew cask install insomnia
-#  brew cask install inkscape
-#  brew cask install owasp-zap
-#  brew cask install logitech-camera-settings
-#  brew cask install diffmerge
-
+#  brew install postgres
+#  brew tap heroku/brew
+#  brew install heroku
+#  brew install librsvg
+  
+  echo " > Installing applications via brew cask"
   brew cask install docker
   brew cask install google-chrome
   brew cask install firefox
@@ -80,6 +71,14 @@ _pour_brew() {
   brew cask install rstudio
   brew cask install mactex
   brew cask install cyberduck
+
+# Hardly relevant for the future
+#  brew cask install psequel
+#  brew cask install insomnia
+#  brew cask install inkscape
+#  brew cask install owasp-zap
+#  brew cask install logitech-camera-settings
+#  brew cask install diffmerge
 
   echo " > Brew is over!"
 
