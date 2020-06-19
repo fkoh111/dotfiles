@@ -157,6 +157,8 @@ _pour_brew() {
   brew install imagemagick@6
   brew install librsvg
   brew install azure-cli
+  brew install watchman
+  brew install jmeter
 
   echo " > Installing applications via brew cask"
   brew cask install docker
