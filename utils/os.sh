@@ -29,31 +29,47 @@ _pour_brew() {
     brew doctor
   fi
 
-
   echo " > Installing utils via brew"
   brew install git
   brew install curl
   brew install wget
   brew install tree
   brew install htop
-  brew install postgres
-  brew install r
-  brew install ghostscript
-  brew install imagemagick
-  brew install pandoc-citeproc
-  brew install qpdf
   brew install nmap
-  brew install node
-  brew install yarn
-  brew tap heroku/brew
-  brew install heroku
-  brew install imagemagick@6
-  brew install librsvg
   brew install azure-cli
-  brew install watchman
   brew install jmeter
 
+# Hardly relevant for the future
+#  brew install postgres
+#  brew tap heroku/brew
+#  brew install heroku
+#  brew install librsvg
+
+# Dependencies
+  brew install ghostscript
+  brew install imagemagick
+  brew install imagemagick@6
+  brew install pandoc-citeproc
+  brew install qpdf
+  brew install watchman
+
+# Development stuff
+  brew install r
+  brew install node
+  brew install yarn
+  brew install java
+  brew install python
+  
   echo " > Installing applications via brew cask"
+
+# Hardly relevant for the future
+#  brew cask install psequel
+#  brew cask install insomnia
+#  brew cask install inkscape
+#  brew cask install owasp-zap
+#  brew cask install logitech-camera-settings
+#  brew cask install diffmerge
+
   brew cask install docker
   brew cask install google-chrome
   brew cask install firefox
@@ -61,15 +77,9 @@ _pour_brew() {
   brew cask install visual-studio-code
   brew cask install 1password
   brew cask install whatsapp
-  brew cask install psequel
   brew cask install rstudio
   brew cask install mactex
   brew cask install cyberduck
-  brew cask install insomnia
-  brew cask install owasp-zap
-  brew cask install inkscape
-  brew cask install logitech-camera-settings
-  brew cask install diffmerge
 
   echo " > Brew is over!"
 
