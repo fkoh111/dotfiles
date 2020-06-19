@@ -7,6 +7,7 @@ echo "*******************************************"
 shopt -s dotglob
 
 source utils/utils.sh
+source utils/os.sh
 
 TARGET=.bash_profile
 DOTFILE=.dotfile
