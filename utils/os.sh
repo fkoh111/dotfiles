@@ -36,6 +36,7 @@ _pour_brew() {
   brew install tree
   brew install htop
   brew install nmap
+  brew install unrar
   brew install azure-cli
   brew install jmeter
 
