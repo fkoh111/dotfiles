@@ -72,9 +72,9 @@ _pour_brew() {
   brew cask install rstudio
   brew cask install mactex
   brew cask install cyberduck
+  brew cask install dbeaver-community
 
 # Hardly relevant for the future
-#  brew cask install psequel
 #  brew cask install insomnia
 #  brew cask install inkscape
 #  brew cask install owasp-zap
