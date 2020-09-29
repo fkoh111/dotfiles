@@ -73,6 +73,7 @@ _pour_brew() {
   brew cask install mactex
   brew cask install cyberduck
   brew cask install dbeaver-community
+  brew cask install balenaetcher
 
 # Hardly relevant for the future
 #  brew cask install insomnia
