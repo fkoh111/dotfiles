@@ -39,6 +39,7 @@ _pour_brew() {
   brew install unrar
   brew install azure-cli
   brew install jmeter
+  brew install coreutils
 
 # Dependencies
   brew install ghostscript
