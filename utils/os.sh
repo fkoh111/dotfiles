@@ -34,6 +34,7 @@ _pour_brew() {
   brew install curl
   brew install wget
   brew install tree
+  brew install make
   brew install htop
   brew install nmap
   brew install unrar
