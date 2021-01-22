@@ -2,3 +2,4 @@ alias weather="curl wttr.in/?format=3"
 alias weather2="curl v2.wttr.in"
 alias weather3="curl wttr.in"
 alias ippublic="curl https://ifconfig.me/ip; echo"
+alias python=python3
