@@ -1,0 +1,6 @@
+
+# Utilize your dotfiles
+source ~/.dots/utils.sh
+for dot in ~/.dots/.add*[A-Za-z0-9]; do
+  source "$dot"
+done

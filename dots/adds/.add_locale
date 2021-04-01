@@ -1,9 +1,0 @@
-# See: https://docs.oracle.com/cd/E23824_01/html/E26033/glmbx.html
-
-export LANG=en_US.UTF-8
-export LC_COLLATE="C"
-export LC_MESSAGES="C"
-export LC_MONETARY="C"
-export LC_NUMERIC="C"
-export LC_TIME="C"
-LC_ALL=
