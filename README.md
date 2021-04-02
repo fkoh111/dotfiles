@@ -3,5 +3,6 @@
 Quick iteration of dotfiles for new pcs.
 
 ```sh
-./setup/setup.sh
+cd setup
+./setup.sh
 ```
